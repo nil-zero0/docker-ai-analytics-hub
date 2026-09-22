@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # フロント窓口（Nginx）
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: always
+    depends_on:
+      - app
+
+  # 爆イケUI & 司令塔（Next.js）
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+      - OLLAMA_HOST=http://ollama:11434
+    restart: always
+    depends_on:
+      - ollama
+
+  # ローカルLLM（Ollama）
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: always
+
+volumes:
+  ollama_data:
+

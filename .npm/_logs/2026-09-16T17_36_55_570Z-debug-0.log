@@ -1,0 +1,29 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@12.0.2
+2 info using node@v26.8.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/act/.npmrc
+5 silly config load:file:/root/.npmrc
+6 silly config load:file:/etc/npmrc
+7 verbose title npm config set unsafe-perm true
+8 verbose argv "config" "set" "unsafe-perm" "true"
+9 verbose logfile logs-max:10 dir:/root/.npm/_logs/2026-09-16T17_36_55_570Z-
+10 verbose logfile /root/.npm/_logs/2026-09-16T17_36_55_570Z-debug-0.log
+11 silly logfile done cleaning log files
+12 info config set "unsafe-perm" "true"
+13 verbose stack Error: `unsafe-perm` is not a valid npm option
+13 verbose stack     at Config.set (/usr/lib/node_modules/npm/lib/commands/config.js:170:15)
+13 verbose stack     at Config.exec (/usr/lib/node_modules/npm/lib/commands/config.js:135:20)
+13 verbose stack     at /usr/lib/node_modules/npm/lib/npm.js:312:81
+13 verbose stack     at Object.start (/usr/lib/node_modules/npm/node_modules/proc-log/lib/index.js:101:21)
+13 verbose stack     at Npm.execCommandClass (/usr/lib/node_modules/npm/lib/npm.js:311:19)
+13 verbose stack     at async Npm.exec (/usr/lib/node_modules/npm/lib/npm.js:194:9)
+13 verbose stack     at async module.exports (/usr/lib/node_modules/npm/lib/cli/entry.js:67:5)
+14 error `unsafe-perm` is not a valid npm option
+15 verbose cwd /home/act
+16 verbose os Linux 7.2.4-arch1-2
+17 verbose node v26.8.2
+18 verbose npm  v12.0.2
+19 verbose exit 1
+20 verbose code 1
+21 error A complete log of this run can be found in: /root/.npm/_logs/2026-09-16T17_36_55_570Z-debug-0.log
